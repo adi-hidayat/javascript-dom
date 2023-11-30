@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Style</title>
+</head>
+<body>
+    <h2>Style</h2>
+    - DOM juga bisa digunakan untuk memanipulasi attribute style pada element dengan lebih mudah <br>
+    - Kita tidak perlu menggunakan setAttribute("style", "value") setiap ingin mengubah style sebuah
+    element <br>
+    - Kita bisa langsung gunakan element.style.name = value <br>
+    https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
+
+    <h2>Nama Style</h2>
+    - Saat kita mengubah sebuah style, penamaan style menjadi berubah <br>
+    - Pada style css, rata-rata menggunakan format lowercase dan -, misal background-color <br>
+    - Sedangkan pada DOM Style, menggunakan format pascalCase, misal backgroundColor
+
+    <div id="box"></div>
+
+    <button color="red" class="button">Merah</button>
+    <button color="yellow" class="button">Kuning</button>
+    <button color="green" class="button">Hijau</button>
+    <button color="blue" class="button">Biru</button>
+</body>
+<script>
+    const box = document.getElementById("box")
+    box.style.width = "300px"
+    box.style.height = "200px"
+    box.style.backgroundColor = "white"
+    box.style.border = "5px solid black"
+    box.style.borderRadius = "10px"
+
+    const buttons = document.querySelectorAll("button")
+
+    buttons.forEach(function (button) {
+        button.style.backgroundColor = button.getAttribute('color')
+        button.style.padding = "15px"
+        button.style.marginTop = "10px"
+        button.style.border = "0px"
+        button.style.color = button.getAttribute('color') == 'yellow' ? "black" : "white"
+        button.style.fontWeight = "bold"
+        button.style.borderRadius = "10px"
+        button.style.cursor = "pointer"
+        button.addEventListener("click", function(){
+            box.style.backgroundColor = button.getAttribute('color')
+        })
+    })
+
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node Type</title>
+</head>
+<body>
+    <h2>Node Type</h2>
+    - Saat kita menyeleksi Node menjadi NodeList, kadang kita ingin tahu tipe Node tersebut <br>
+    - Apakah Element, Text, Element atau yang lainnya <br>
+    - Node sendiri memiliki property bernama nodeType, dimana kita bisa melihat tipe dari node
+    tersebut <br>
+    https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType
+</body>
+<script>
+    const nodes = document.body.childNodes
+
+    nodes.forEach(function(node) {
+        console.log(node + " : " + node.nodeType)
+    })
+
+</script>
+</html>

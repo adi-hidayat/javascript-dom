@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Query Selector</title>
+</head>
+<body>
+    <h2>Query Selector</h2>
+    - Sebelumnya kita sudah menggunakan method querySelectorA||() pada Document, sekarang kita <br>
+    - akan bahas lebih lengkap tentang Query Selector <br>
+    - Query Selector merupakan method untuk menseleksi node sesuai dengan pola yang kita ingin cari <br>
+    - Terdapat dua method untuk Query Selector : <br>
+
+    1. Document.querySelector(pola) digunakan menyeleksi node pertama yang sesuai dengan pola <br>
+    2. Document.querySelectorAlI(pola) digunakan untuk menyeleksi semua node yang sesuai dengan pola <br>
+
+    <h2>Universal Selector</h2>
+    - Universal Selector merupakan selector untuk menyeleksi semua element <br>
+    - Kita bisa menggunakan karakter * <br>
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Universal selectors
+
+    <h2>Type Selector</h2>
+    - Type Selector adalah selector yang digunakan untuk menyeleksi tag type HTML yang kita pilih <br>
+    - Untuk menggunakannya, kita bisa langsung sebutkan nama tag nya <br>
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors
+
+    <h2>Class Selector</h2>
+    - Class Selector merupakan selector untuk menyeleksi semua element yang memiliki class yang
+      sesuai selector
+    - Untuk menggunakannya, kita bisa sebutkan nama class nya diawali dengan titik <br>
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Class selectors
+
+    <h2>ID Selector</h2>
+    - ID Selector merupakan selector yang digunakan untuk menyeleksi id yang sesuai selector <br>
+    - Untuk menggunakannya, kita bisa gunakan nama id diawali dengan karakter # <br>
+    https://developer.mozilla.org/en-US/docs/Web/CSS/ID selectors
+
+    <h2>Attribute Selector</h2>
+    - Attribute Selector merupakan selector yang bisa digunakan untuk menyeleksi element
+    berdasarkan attribute nya <br>
+    - Kita bisa menggunakan selector [attribute] <br>
+    - Atau bisa juga untuk tag tertentu, misal menggunakan selector div attribute] <br>
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute selectors
+
+    <h2>Operator di Attribute Selector</h2>
+    - Kita juga bisa menggunakan operator pada attribut selector <br>
+    - Misal [attribute =value], [attribute^=value] dan lain-lain <br>
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute selectors#syntax
+
+    <h1 class="daftar-menu" id="menu-title">Daftar Menu</h1>
+    <ul>
+        <li>Satu</li>
+        <li>Dua</li>
+        <li>Tiga</li>
+    </ul>
+    <input type="text" name="menu">
+    <input type="text" name="list">
+    <input type="number" name="price">
+</body>
+<script>
+    const elements = document.querySelectorAll("*") // universal
+    console.log(elements)
+
+    const list = document.querySelectorAll("li") // type
+    console.log(list)
+
+    const menuTitle = document.querySelectorAll(".daftar-menu") // class
+    console.log(menuTitle)
+
+    const menuTitleh1 = document.querySelectorAll("#menu-title") // id
+    console.log(menuTitleh1)
+
+    const input = document.querySelectorAll("[name='menu']") // attribute
+
+    console.log(input)
+
+    const operator = document.querySelectorAll("[type^='text']") // operator
+    console.log(operator)
+
+
+</script>
+</html>

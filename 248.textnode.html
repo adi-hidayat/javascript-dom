@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Node</title>
+</head>
+<body>Hello text
+    <h2>Text Node</h2>
+    - Saat kita membuat HTML, kadang kita membuat teks tapa tag <br>
+    - Saat halaman web tersebut direpresentasikan dalam DOM, text tapa tag bukanlah merupakan
+    Element, melainkan Node <br>
+    - Lebih tepatnya adalah Text Node
+    https://developer.mozilla.org/en-US/docs/Web/API/Text
+
+    <h2>Membuat Text Node</h2>
+    - Kita juga bisa membuat Text Node menggunakan method document.create TextNode(string) <br>
+    - Hasilnya berupa Text yang bisa kita tambahkan ke Node lain <br>
+</body>
+
+<script>
+  const text = document.body.firstChild // mengambil text "Hello text" karena text itu lah yang pertama yang ada di body
+  console.log(text)
+
+  const newText = document.createTextNode("Adi Hidayat")
+  document.body.appendChild(newText)
+</script>
+</html>

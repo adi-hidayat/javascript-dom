@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Table Element</title>
+</head>
+<body>
+    <h2>HTML Table Element</h2>
+    - Salah satu HTML Element yang kompleks selain Form adalah Table <br>
+    - HTML Table Element juga memiliki banyak sekali property, method dan event yang khusus <br>
+    https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement
+
+    <table id="table-product" caption="Data Produk">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Indomie</td>
+                <td>3500</td>
+            </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+</body>
+
+    <script>
+        const productTable = document.getElementById("table-product")
+        console.log(productTable.tHead)
+        console.log(productTable.tBodies)
+        console.log(productTable.tFoot)
+    </script>
+</html>

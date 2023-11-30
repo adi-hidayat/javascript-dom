@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nodes</title>
+</head>
+<body>
+    <h2>Nodes</h2>
+    - Node adalah base class dari Document, Element dan Attr <br>
+    - Artinya semua fitur yang dimiliki di Node dimiliki diturunannya <br>
+    - Node dalam DOM itu bentukya adalah Tree (pohon), artinya dengan Node, kita bisa melihat <br>
+    - Parent (node diatas nya), Children (node dibawahnya), Sibling (node disebelahnya) <br>
+    https://developer.mozilla.org/en-US/docs/Web/API/Node
+
+    <h2>Contoh</h2>
+    <ul id="menu">
+      <li id="first">First</li>
+      <li id="second">Second</li>
+      <li id="last">Last</li>
+    </ul>
+
+    <h2>Node Property</h2>
+    - Node memiliki banyak sekali property <br>
+    - Property di Node banyak berisi informasi reference ke Node lain nya, seperti ke node parent nya,
+    node children nya atau node sebelahnya <br>
+    https://developer.mozilla.org/en-US/docs/Web/API/Node#properties
+
+    <h2>Node Method</h2>
+    - Node memiliki banyak sekali method <br>
+    - Method di Node bisa digunakan untuk memanipulasi data Node di dalam Node tersebut, misal
+    menambah/menghapus Node children <br>
+    https://developer.mozilla.org/en-US/docs/Web/API/Node#properties
+</body>
+
+<script>
+    // node property
+  const menu = document.getElementById('menu')
+  console.log(menu)
+  console.log(menu.childElementCount)
+  console.log(menu.children)
+  console.log(menu.childNodes)
+
+  const second = document.getElementById('second')
+  console.log(second.previousSibling)
+  console.log(second.nextSibling)
+
+  // node method
+    menu.removeChild(document.getElementById('first'));
+    menu.removeChild(document.getElementById('second'));
+    menu.removeChild(document.getElementById('last'));
+</script>
+</html>

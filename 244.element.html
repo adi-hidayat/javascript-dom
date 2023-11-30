@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Element</title>
+</head>
+<body>
+    <h2>Element</h2>
+    - Element merupakan Node yang berbentuk element, biasanya adalah element HTML, misal tag html
+    head, body, div, table, dan lain-lain <br>
+    https://developer.mozilla.org/en-US/docs/Web/API/Element
+
+    <h2>Element Property</h2>
+    - Element memiliki banyak sekali property <br>
+    - Dan karena Element adalah turunan dari Node, semua property Node pun bisa digunakan di Element <br>
+    https://developer.mozilla.org/en-US/docs/Web/API/Element#properties
+
+    <h2>Element Method</h2>
+    - Element memiliki banyak sekali method <br>
+    - Dan karena Element adalah turnan dari Node, semua method Node pun bisa digunakan di Element <br>
+    https://developer.mozilla.org/en-US/docs/Web/API/Element#methods
+
+    <h2>Membuat Element</h2>
+    - Sebelumnya kita hanya mengambil element menggunakan id, artinya kita perl buat dulu element
+    nya di HTML <br>
+    - Kita juga bisa membuat object element baru, dan menambahkannya ke halaman web <br>
+    - Kita bisa menggunakan method createElement(tag) pada Document <br>
+    https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+
+    <br>
+    <br>
+    <div id="title" class="title">Hello world</div>
+    <div id="description">Ini adalah deskripsi</div>
+    <div id="content"></div>
+</body>
+<script>
+    // element
+    const title = document.getElementById('title');
+    let oldTitle = title.textContent;
+    title.textContent = title.textContent + " from Adi"
+
+    const description = document.getElementById('description')
+    description.textContent = "Aku padamu, kamu padanya"
+
+    // element property
+    console.log(title.id) // id
+    console.log(title.className) // nama kelas
+    console.log(title.tagName) // tag nya apa
+    console.log(title.attributes) // mendapatkan attribute
+    console.log(title.attributes['class']) // mendapatkan attribute
+    console.log(title.attributes['class'].value) // mendapatkan attribute value
+    console.log(title.classList)// mendapatkan seluruh kelas yang ada pada tag tersebut
+
+    // contoh element method
+    console.log(title.hasAttribute('class')) // method untuk mendapatkan apakah element memiliki attribute
+    // method lainnya ada di dokumentasi
+
+    //create element
+    const contentTitle = document.createElement("h1")
+    contentTitle.textContent = "Aku padamu"
+
+    const contentDescription = document.createElement('p')
+    contentDescription.textContent = "Ya begitulah namanya juga hidup wkwkwk"
+
+    let content = document.getElementById('content')
+    content.appendChild(contentTitle)
+    content.appendChild(contentDescription)
+
+</script>
+</html>

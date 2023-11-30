@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Handler</title>
+</head>
+<body>
+    <h2>Event Handler</h2>
+    - Node memiliki kemampuan bereaksi terhadap suatu kejadian, misal kejadian di klik, mouse di atas
+    node tersebut. dan lain-lain <br>
+    - Ada banyak sekali jenis kejadian yang bisa kita buatkan aksinya ketika kejadian tersebut terjadi,
+    atau dikenal dengan nama Event Handler <br>
+    - Ada dua cara kita menambahkan Event Handler ke Node, menggunakan Event Target atau Global
+    Event Handler <br>
+    https://developer.mozilla.org/en-US/docs/Web/API/EventTarget <br>
+    https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers
+
+    <h2>Event Target</h2>
+    - Event Target merupakan parent class dari Node, artinya semua Node memiliki kemampuan dari <br>
+    - Event Target <br>
+    - Pada Event Target, kita bisa menggunakan method addEventListener(type, callback) untuk
+    menambahkan Event Handler <br>
+    https://developer.mozilla.org/en-US/docs/Web/API/EventTarget <br>
+
+    <input id="clickMe" type="button" value="Click Me" />
+
+    <h2>Global Event Handler</h2>
+    - Selain menggunakan Event Target, untuk menambahkan Event Handler, kita juga bisa
+    menggunakan Global Event Handler <br>
+    - Global Event Handler bukanlah sebuah super class, hanya kontrak yang bisa kita gunakan untuk
+    menambah event handler sesuai dengan type event nya <br>
+    https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers <br>
+    <input id="pleaseClickMe" type="button" value="Click Me" />
+
+</body>
+
+  <script>
+      // event target
+      const buttonClickMe = document.getElementById('clickMe')
+
+      buttonClickMe.addEventListener("click", function(){
+        buttonClickMe.setAttribute("value", "Aw aku di klik...")
+      })
+
+      // global event handler
+      // global event handler hanya satu kali, tidak ada perubahan untuk action selanjutnya
+      const buttonPleaseClickMe = document.getElementById('pleaseClickMe')
+      buttonPleaseClickMe.onclick = function () {
+          alert("Awokwkwkwkwkwk")
+      }
+  </script>
+</html>

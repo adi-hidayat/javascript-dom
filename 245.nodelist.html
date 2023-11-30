@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NodeList</title>
+</head>
+<body>
+    <h2>NodeList</h2>
+    - NodeList adalah kumpulan dari Node <br>
+    - Biasanya NodeList digunakan ketika kita menyeleksi banyak Node sekaligus, misal ketika kita ingin
+    mengambil semua children di Node misalnya <br>
+    https://developer.mozilla.org/en-US/docs/Web/API/NodeList
+
+    <h2>Live vs Static nodeList</h2>
+    - NodeList memiliki 2 tipe, yaitu Live dan Static <br>
+    - Live artinya perubahan yang terjadi pada NodeList nya, akan merubah semua NodeList yang sama <br>
+    - Static artinya perubahan yang terjadi pada NodeList nya, tidak akan merubah semua NodeList
+    yang sama <br>
+    - Saat kita menggunakan element.childNodes, NodeList tersebut bersifat Live <br>
+    - Sat kita menggunakan document.querySelectorAll), NodeList tersebut bersifat Static
+
+    <ul id="menu1">
+        <li id="first">First</li>
+        <li id="second">Second</li>
+        <li id="third">Third</li>
+    </ul>
+
+    <ul id="menu2">
+        <li id="first1">First</li>
+        <li id="second2">Second</li>
+        <li id="third3">Third</li>
+    </ul>
+</body>
+<script>
+    // Nodelist
+    // const list = document.querySelectorAll("li") // akan mengambil semua dengan tag ul
+    // console.log(list)
+
+    // jika dengan nodelist
+    // let nodeList = document.getElementById("menu1").childNodes // hanya mengambil menu1
+    // console.log(nodeList)
+
+    // Live vs Static NodeList
+
+    // Static : ketika terjadi perubahan tidak akan berubah
+    const listStatic = document.querySelectorAll("li")
+    console.log(listStatic)
+
+    // Live : akan berubah ketika ada perubahan
+    const menu1 = document.getElementById('menu1')
+    const list = menu1.childNodes
+
+    menu1.appendChild(document.createElement('li'))
+    menu1.appendChild(document.createElement('li'))
+
+    console.log(list)
+
+    // Static
+
+</script>
+</html>

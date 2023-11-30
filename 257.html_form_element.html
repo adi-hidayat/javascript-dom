@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Form Element</title>
+</head>
+<body>
+    <h2>HTML Form</h2>
+    - Form adalah salah satu element yang memiliki banyak sekali fitur diluar dari Element DOM <br>
+    - Hal ini karena penggunaan Form memang lebih kompleks dibandingkan element HTML lainnya <br>
+    - Ada banyak sekali property, method dan juga event yang terdapat pada HTML form element atau ≈
+    input element <br>
+    https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement <br>
+    https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement
+
+    <h2>Akses Form via Name</h2>
+    - Salah satu kelebihan Form adalah, kita bisa mengakses form hanya dengan menggunakan form
+    name <br>
+    - Kita bisa gunakan document. forms [name] <br>
+    - Atau jika kita ingin mengakses input nya, kita juga bisa menggunakan name nya
+    document.forms[name][inputName]
+
+    <hr>
+
+    <form name="productForm">
+        <label>
+            Product Name
+            <input type="text" name="product">
+        </label>
+        <label>
+            Price
+            <input type="number" name="price">
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+
+    <ul id="productList">
+
+    </ul>
+</body>
+<script>
+    document.querySelector("form[name=productForm]").onsubmit = function() {
+        const productList = document.getElementById('productList')
+        const product = document.querySelector("input[name=product]").value
+        const price = document.querySelector("input[name=price]").value
+        if (product == '' || price =='') {
+            alert("lengkapi form");
+            return false;
+        }
+        const newProduct = document.createElement('li')
+        newProduct.textContent = `${product} - ${price}`
+        productList.append(newProduct)
+
+        document.forms['productForm'].reset()
+
+        event.preventDefault()
+    }
+</script>
+</html>

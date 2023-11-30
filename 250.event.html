@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event</title>
+</head>
+<body>
+    <h2>Jenis Event</h2>
+    - DOM sendiri memiliki banyak sekali jenis event, tidak hanya click <br>
+    - Jenis event yang bisa kita gunakan biasanya disesuaikan dengan target event nya, misal pada
+    element video, ada event play, pause, sedangkan pada element button, tidak ada event play atau
+    pause <br>
+    - Untuk lebih detailnya, ada apa saja jenis event nya, kita bisa lihat pada halaman berikut : <br>
+    https://developer.mozilla.org/en-US/docs/Web/Events
+
+    <h2>Event</h2>
+    - Saat kita membuat callback function untuk Event Handler, kita juga bisa menerima data event yang
+    memicu event itu teriadi <br>
+    - Data Event,tersebut bisa berbeda-beda, tergantung jenis Event nya, contohnya untuk Click, data
+    event nya berupa Mouse Event (yang berisi lokasi mouse dan lain-lain) <br>
+    - Kita bisa lihat detail dari data tap event di halaman documentation nya: <br>
+    https://developer.mozilla.org/en-US/docs/Web/AP|/Event
+
+    <h2 id="text">Click Yellow Box</h2>
+    <div id="canvas" style="width: 100%; height: 300px; background-color: yellow"> </div>
+</body>
+<script>
+    const canvas = document.getElementById("canvas")
+
+    const text = document.getElementById("text")
+
+    canvas.onclick = function (event) {
+        text.textContent = `You click at ${event.x}, ${event.y}`
+    }
+
+    canvas.onmouseenter = function (event) {
+        text.textContent = `Silahkan klik box yang berwarna kuning`
+    }
+
+</script>
+</html>
